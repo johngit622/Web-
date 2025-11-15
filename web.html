@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pricing Card</title>
+    <script type="module" src="./src/pricing-card.js"></script>
+  </head>
+
+  <body>
+    <pricing-card
+      title="Basic Plan"
+      price="$9.99 /month"
+      features="1 GB Storage,Basic Support,All Core Features"
+      button-text="Start Trial"
+    ></pricing-card>
+
+    <!--
+      Alternative usage: provide a light-dom <ul> inside the component (fallback)
+      <pricing-card title="Pro Plan" price="$19.99 /month" button-text="Buy Now">
+        <ul>
+          <li>10 GB Storage</li>
+          <li>Priority Support</li>
+        </ul>
+      </pricing-card>
+    -->
+
+    <script>
+      // Example listener for the component's CTA event
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.addEventListener("cta", (e) => {
+          console.log("pricing-card CTA:", e.detail);
+        });
+      });
+    </script>
+  </body>
+</html>
